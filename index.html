@@ -4,19 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MII-HUB | Mobility in India & International</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
       background-color: #f5f7fa;
       color: #333;
     }
     header {
-      background-color: #005a8d;
+      background: linear-gradient(to right, #003c64, #005a8d);
       color: white;
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 1rem;
+      background-image: url('https://i.imgur.com/FvmN1XQ.jpg'); /* replace with your own */
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    header * {
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    nav {
+      margin-top: 1rem;
     }
     nav a {
       color: white;
@@ -25,41 +52,64 @@
       font-weight: 600;
     }
     section {
-      padding: 2rem 4rem;
-    }
-    .highlight {
-      color: #ffb400;
+      padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: auto;
     }
     .services, .projects, .contact {
-      background-color: white;
-      margin: 2rem auto;
+      background: white;
+      margin-top: 2rem;
       padding: 2rem;
-      border-radius: 10px;
-      max-width: 960px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
-    ul {
-      line-height: 1.8;
+    .card {
+      border: 1px solid #ddd;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin: 1rem 0;
+      background: #fafafa;
+    }
+    .card h3 {
+      color: #005a8d;
+      margin-bottom: 0.5rem;
     }
     .btn {
       background-color: #005a8d;
       color: white;
-      padding: 0.6rem 1.4rem;
+      padding: 0.7rem 1.4rem;
       border: none;
       border-radius: 5px;
       text-decoration: none;
-      font-weight: 600;
+      display: inline-block;
+      font-weight: bold;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin: 0.5rem 0 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
     footer {
-      background-color: #005a8d;
+      background-color: #003c64;
       color: white;
       text-align: center;
       padding: 1rem;
+      margin-top: 3rem;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>MII-HUB</h1>
     <p>Mobility in India & International – Hub</p>
@@ -71,44 +121,64 @@
   </header>
 
   <section>
-    <h2>Welcome to <span class="highlight">MII-HUB</span></h2>
+    <h2>Welcome to <span style="color:#ffb400">MII-HUB</span></h2>
     <p>
-      We provide professional transport analysis and simulation services for Indian and global cities, using powerful tools like PTV Visum, Vissim, and QGIS. Whether it's infrastructure planning, accessibility modeling, or urban transport strategy, we deliver smart, sustainable solutions.
+      A mobility analysis and consulting platform led by Rajvignesh Panneerselvam, providing data-driven solutions for smarter public transport, traffic forecasting, and sustainable mobility development across Indian and global cities.
     </p>
   </section>
 
   <section id="services" class="services">
-    <h2>Services</h2>
+    <h2>Our Services</h2>
     <ul>
-      <li>Public Transport Demand & Supply Design</li>
-      <li>Transport Simulation using PTV Visum/Vissim</li>
-      <li>Urban Redevelopment & Accessibility Impact Analysis</li>
-      <li>Traffic Calming & Sustainable Urban Mobility Planning</li>
-      <li>Multimodal Hub Design & Pedestrian Flow Simulation</li>
+      <li>Public Transport Design & Simulation (PTV Visum/Vissim)</li>
+      <li>Urban Redevelopment Mobility Impact Assessment</li>
+      <li>OD Matrix Modeling & Scenario Planning</li>
+      <li>Multimodal Hub Design & Station Flow Optimization</li>
+      <li>Traffic Calming & Policy-Based Urban Mobility Strategy</li>
     </ul>
   </section>
 
   <section id="projects" class="projects">
     <h2>Featured Projects</h2>
-    <ul>
-      <li><strong>Bovisa Redevelopment Study (Milan):</strong> +18% Accessibility, -12% Travel Time via metro, tram and pedestrian improvements.</li>
-      <li><strong>Belluno Public Transport Simulation:</strong> Designed multiple lines and optimized depot and terminal locations for rural-urban areas.</li>
-      <li><strong>Milano 30:</strong> Modeled 30 km/h speed zones to analyze effects on safety, emissions, and modal shift.</li>
-      <li><strong>Multimodal Hub – Milano Bovisa:</strong> Pedestrian simulation using VISSIM to improve station flow, LOS, and infrastructure redesign.</li>
-    </ul>
+
+    <div class="card">
+      <h3>Bovisa Redevelopment, Milan</h3>
+      <p>+18% Public Transport Accessibility, -12% Average Travel Time. PTV Visum-based strategic modeling for Goccia & MoLeCoLa projects.</p>
+    </div>
+    <div class="card">
+      <h3>Belluno Province Public Transport</h3>
+      <p>Bus line design, terminal placement & depot optimization. Operational efficiency analysis based on cycle time constraints.</p>
+    </div>
+    <div class="card">
+      <h3>Milano 30 – Traffic Calming Plan</h3>
+      <p>Simulated 30 km/h zones to assess impacts on emissions, safety, and modal shift. Data visualization in QGIS + Visum macro modeling.</p>
+    </div>
+    <div class="card">
+      <h3>Milano Bovisa Multimodal Hub</h3>
+      <p>Pedestrian simulation using Vissim to evaluate platform congestion, LOS, and rush-hour bottlenecks. Station redesign proposals included.</p>
+    </div>
   </section>
 
   <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p><strong>Let’s build smarter mobility together.</strong></p>
+    <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/xpzvwnkk" method="POST">
+      <label for="name">Your Name</label>
+      <input type="text" name="name" id="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required />
+
+      <label for="message">Message</label>
+      <textarea name="message" id="message" rows="5" required></textarea>
+
+      <button class="btn" type="submit">Send Message</button>
+    </form>
     <p>Email: <a href="mailto:contact@miihub.in">contact@miihub.in</a></p>
     <p>LinkedIn: <a href="https://linkedin.com/in/rajvigneshp" target="_blank">Rajvignesh Panneerselvam</a></p>
-    <p><a href="mailto:contact@miihub.in" class="btn">Request a Project</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 MII-HUB. Powered by Rajvignesh Panneerselvam.</p>
+    <p>&copy; 2025 MII-HUB. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
